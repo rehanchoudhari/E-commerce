@@ -1,0 +1,48 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'body' %}
+<div class="d-flex h-100 text-center text-white index">
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'videos/circuit.mp4' %}" type="video/mp4">
+        <!-- Credit: https://www.pexels.com/@kelly-l-1179532 (Pexels.com)-->
+    </video>
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column main-content">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0"> E-Sell-Buy</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    {% if request.user.is_authenticated %}
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    {% else %}
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+        <main class="px-3">
+            <h2>Find a deal near you!</h2>
+            <p class="lead">Looking to buy or sell a used Product? We've got you
+                covered. </br> E-Sell-Buy is the leading used E-Product marketplace.</p>
+            <p class="lead">
+                <a href="{% url 'register' %}"
+                    class="btn btn-lg btn-secondary fw-bold border-white bg-white">Register</a>
+            </p>
+        </main>
+        <footer class="mt-auto text-white-50">
+            <p>Copyright © {% now 'Y' %} <a href="" class="text-white">E-Sell-Buy</a> by <a href=""
+                    class="text-white">Preneure.com</a></p>
+        </footer>
+    </div>
+</div>
+{% endblock %}
+
+{% block 'footer' %}
+<footer class="footer text-muted bg-dark py-5">
+    <div class="container">
+        <p class="float-end mb-1">Powered by <a href="https://www.djangoproject.com/">Django</a></p>
+        </p>
+        <p class="mb-1">E-Sell-Buy - Best Place To Buy & Sell Cars</p>
+        <p class="mb-0">© Copyright {% now 'Y' %} <a href="">E-Sell-Buy</a></p>
+    </div>
+{% endblock %}
