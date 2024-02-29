@@ -69,3 +69,7 @@ Log in with the superuser credentials created earlier.
 
 Usage
 Visit http://127.0.0.1:8000/ to access the todo list.
+
+home page.
+![image](https://github.com/rehanchoudhari/E-commerce/assets/74309338/4a668aa1-8150-4a19-a882-42c662ea098c)
+
